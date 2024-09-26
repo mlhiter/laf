@@ -18,13 +18,15 @@ type SITE_KEY =
   | "laf_status_url"
   | "laf_doc_url"
   | "laf_about_us_url"
-  | "enable_web_promo_page";
+  | "enable_web_promo_page"
+  | "sealaf_notification";
 
+export type SiteSettings = {
+  // eslint-disable-next-line no-unused-vars
+  [key in SITE_KEY]?: TSetting;
+};
 type State = {
-  siteSettings: {
-    // eslint-disable-next-line no-unused-vars
-    [key in SITE_KEY]?: TSetting;
-  };
+  siteSettings: SiteSettings;
   getSiteSettings: () => void;
 };
 
